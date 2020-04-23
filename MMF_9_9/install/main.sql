@@ -1,46 +1,42 @@
 SET TIME ON
 SET TIMING ON
 SET APPINFO ON
-
-
-PROMPT Enter username
-DEFINE USER_NAME = &&1
-PROMPT Enter tablespace location
-DEFINE TBS_LOCATION = &&2
-PROMPT Enter password
-DEFINE SCHEMA_PASSWORD = &&3
  
 SPOOL INSTALL_SCHEMA.LOG
 
+DEFINE USER_NAME = &&1
+DEFINE TBS_LOCATION = &&2
+
 SET SERVEROUTPUT ON
-PROMPT ==========
-PROMPT Username to create: &&USER_NAME
-PROMPT
-PROMPT Path of datafile location: &&TBS_LOCATION
-PROMPT 
-PROMPT Calling create_tablespace.sql for data tablespace
-PROMPT ==========
 
-@create_tablespace.sql &&USER_NAME &&TBS_LOCATION 
-PROMPT
+PROMPT  "EXECUTE create_tablespace.sql for data tablespace"
+PROMPT "USERNAME: &&USER_NAME"
+PROMPT "TABLESPACE LOCATION: &&TBS_LOCATION"
 
-PROMPT ==========
-PROMPT Calling create_user.sql 
-PROMPT ==========
+@create_tablespace.sql &&USER_NAME &&TBS_LOCATION DATA
 
-@create_user.sql &&USER_NAME &&SCHEMA_PASSWORD '&&USER_NAME._DATA' 
+PROMPT  "EXECUTE create_tablespace.sql for index tablespace"
+PROMPT  "USERNAME: &&USER_NAME"
+PROMPT  "TABLESPACE LOCATION: &&TBS_LOCATION"
 
-PROMPT ==========
-PROMPT Calling user_privilege.sql for &&USER_NAME
-PROMPT ==========
+@create_tablespace.sql &&USER_NAME &&TBS_LOCATION IDX
 
-@user_privilege.sql &&USER_NAME
+PROMPT 'EXECUTING create_user.sql'
+
+@create_user.sql &&USER_NAME 
+
+PROMPT 'USER &&USER_NAME CREATED SUCCESFULLY'
+
+PROMPT 'EXECUTING user_privilige.sql'
+
+@user_privilige.sql &&USER_NAME 
+
+PROMPT 'PRIVILIGES TO &&USER_NAME CREATED SUCCESFULLY'
 
 SET SERVEROUTPUT OFF
 
-UNDEFINE USER_NAME;
-UNDEFINE TBS_LOCATION;
-UNDEFINE SCHEMA_PASSWORD;
+UNDEFINE USER_NAME
+UNDEFINE TBS_LOCATION
 
 
 SPOOL OFF
