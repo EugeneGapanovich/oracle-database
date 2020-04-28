@@ -4,11 +4,9 @@ SPOOL UPGRADE_SCHEMA.LOG
 
 DEFINE USER_NAME = &&1
 
-
 SET SERVEROUTPUT ON
-PROMPT Username to upgrade: &&USER_NAME
 
-connect &&USER_NAME/oracle 
+connect "&&USER_NAME"/"oracle" 
 
 SET SERVEROUTPUT OFF
 

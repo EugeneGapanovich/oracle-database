@@ -1,26 +1,27 @@
-Enter value for 1: MMF_9_9
-Enter value for username: MMF_9_9
-USERNAME: MMF_9_9
-EXECUTING drop_user.sql
-old   1: DROP USER &&USER_NAME CASCADE
-new   1: DROP USER MMF_9_9 CASCADE
+'USERNAME: MMF_9_9'
+'EXECUTING drop_user.sql'
+old   1: DROP USER "&&USER_NAME" CASCADE
+new   1: DROP USER "MMF_9_9" CASCADE
 
 User dropped.
 
-Elapsed: 00:00:00.24
-Enter value for user_name: MMF_9_9
-USER MMF_9_9 DROPPED SUCCESFULLY
-EXECUTING drop_tablespace.sql
-old   1: DROP TABLESPACE &&TBS_DATA_NAME
-new   1: DROP TABLESPACE MMF_9_9_DATA
+Elapsed: 00:00:00.20
+'USER MMF_9_9 DROPPED SUCCESFULLY'
+'EXECUTING drop_tablespace.sql'
+old   1: DROP TABLESPACE "&&TBS_DATA_NAME"
+new   1: DROP TABLESPACE "MMF_9_9_DATA"
 
 Tablespace dropped.
 
-Elapsed: 00:00:03.74
-old   1: DROP TABLESPACE &&TBS_IDX_NAME
-new   1: DROP TABLESPACE MMF_9_9_IDX
+Elapsed: 00:00:03.52
+old   1: DROP TABLESPACE "&&TBS_IDX_NAME"
+new   1: DROP TABLESPACE "MMF_9_9_IDX"
 
 Tablespace dropped.
 
-Elapsed: 00:00:03.44
-TABLESPACE MMF_9_9_DATA DROPPED SUCCESFULLY
+Elapsed: 00:00:03.19
+
+Commit complete.
+
+Elapsed: 00:00:00.00
+'TABLESPACE MMF_9_9_DATA DROPPED SUCCESFULLY'

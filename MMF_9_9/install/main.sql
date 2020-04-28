@@ -9,27 +9,23 @@ DEFINE TBS_LOCATION = &&2
 
 SET SERVEROUTPUT ON
 
-PROMPT  "EXECUTE create_tablespace.sql for data tablespace"
+PROMPT "EXECUTE create_tablespace.sql for data tablespace"
 PROMPT "USERNAME: &&USER_NAME"
 PROMPT "TABLESPACE LOCATION: &&TBS_LOCATION"
 
-@create_tablespace.sql &&USER_NAME &&TBS_LOCATION DATA
+@create_tablespace &&USER_NAME &&TBS_LOCATION
 
-PROMPT  "EXECUTE create_tablespace.sql for index tablespace"
-PROMPT  "USERNAME: &&USER_NAME"
-PROMPT  "TABLESPACE LOCATION: &&TBS_LOCATION"
-
-@create_tablespace.sql &&USER_NAME &&TBS_LOCATION IDX
+PROMPT 'DATA AND INDEX TABLESPACES CREATED SUCCESFULLY'
 
 PROMPT 'EXECUTING create_user.sql'
 
-@create_user.sql &&USER_NAME 
+@create_user &&USER_NAME 
 
 PROMPT 'USER &&USER_NAME CREATED SUCCESFULLY'
 
-PROMPT 'EXECUTING user_privilige.sql'
+PROMPT 'EXECUTING user_privilege.sql'
 
-@user_privilige.sql &&USER_NAME 
+@user_privilege &&USER_NAME 
 
 PROMPT 'PRIVILIGES TO &&USER_NAME CREATED SUCCESFULLY'
 
