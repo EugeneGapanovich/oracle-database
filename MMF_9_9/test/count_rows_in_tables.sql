@@ -43,4 +43,7 @@ DBMS_OUTPUT.PUT_LINE('TEAMS - count of rows: ' || countOfRows)
 SELECT COUNT(*) INTO countOfRows FROM TRANSFERS;
 DBMS_OUTPUT.PUT_LINE('TRANSFERS - count of rows: ' || countOfRows)
 
+SELECT COUNT(*) INTO countOfRows FROM EVENTS;
+DBMS_OUTPUT.PUT_LINE('EVENTS - count of rows: ' || countOfRows)
+
 END;
