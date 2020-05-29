@@ -8,7 +8,7 @@ new   2:     DATAFILE 'E:\app\User\oradata\ORCL\MMF_9_9_DATA.DBF' SIZE 10M AUTOE
 
 Tablespace created.
 
-Elapsed: 00:00:00.68
+Elapsed: 00:00:01.18
 old   1: CREATE TABLESPACE "&&INDEX_NAME"
 new   1: CREATE TABLESPACE "MMF_9_9_IDX"
 old   2:     DATAFILE '&&INDEX_FILENAME' SIZE 10M AUTOEXTEND ON NEXT 100M MAXSIZE 10G
@@ -16,7 +16,7 @@ new   2:     DATAFILE 'E:\app\User\oradata\ORCL\MMF_9_9_IDX.DBF' SIZE 10M AUTOEX
 
 Tablespace created.
 
-Elapsed: 00:00:00.60
+Elapsed: 00:00:01.20
 'DATA AND INDEX TABLESPACES CREATED SUCCESFULLY'
 'EXECUTING create_user.sql'
 old   1: CREATE USER "&&USER_NAME"
@@ -26,7 +26,7 @@ new   3:     DEFAULT TABLESPACE "MMF_9_9_DATA"
 
 User created.
 
-Elapsed: 00:00:00.09
+Elapsed: 00:00:00.44
 'USER MMF_9_9 CREATED SUCCESFULLY'
 'EXECUTING user_privilege.sql'
 old   1: GRANT CREATE SEQUENCE TO &&USER_NAME
@@ -46,37 +46,37 @@ new   1: GRANT CREATE TYPE TO MMF_9_9
 
 Grant succeeded.
 
-Elapsed: 00:00:00.01
+Elapsed: 00:00:00.00
 old   1: GRANT CREATE SYNONYM TO &&USER_NAME
 new   1: GRANT CREATE SYNONYM TO MMF_9_9
 
 Grant succeeded.
 
-Elapsed: 00:00:00.01
+Elapsed: 00:00:00.00
 old   1: GRANT CREATE SESSION TO &&USER_NAME
 new   1: GRANT CREATE SESSION TO MMF_9_9
 
 Grant succeeded.
 
-Elapsed: 00:00:00.01
+Elapsed: 00:00:00.00
 old   1: GRANT CREATE PROCEDURE TO &&USER_NAME
 new   1: GRANT CREATE PROCEDURE TO MMF_9_9
 
 Grant succeeded.
 
-Elapsed: 00:00:00.01
+Elapsed: 00:00:00.00
 old   1: GRANT CREATE TRIGGER TO &&USER_NAME
 new   1: GRANT CREATE TRIGGER TO MMF_9_9
 
 Grant succeeded.
 
-Elapsed: 00:00:00.01
+Elapsed: 00:00:00.00
 old   1: GRANT CREATE VIEW TO &&USER_NAME
 new   1: GRANT CREATE VIEW TO MMF_9_9
 
 Grant succeeded.
 
-Elapsed: 00:00:00.01
+Elapsed: 00:00:00.04
 old   1: GRANT CREATE ANY DIRECTORY TO &&USER_NAME
 new   1: GRANT CREATE ANY DIRECTORY TO MMF_9_9
 
@@ -88,11 +88,11 @@ new   1: ALTER USER MMF_9_9 QUOTA UNLIMITED ON MMF_9_9_DATA
 
 User altered.
 
-Elapsed: 00:00:00.01
+Elapsed: 00:00:00.03
 old   1: ALTER USER &&USER_NAME QUOTA UNLIMITED ON &&USER_NAME._IDX
 new   1: ALTER USER MMF_9_9 QUOTA UNLIMITED ON MMF_9_9_IDX
 
 User altered.
 
-Elapsed: 00:00:00.01
+Elapsed: 00:00:00.00
 'PRIVILIGES TO MMF_9_9 CREATED SUCCESFULLY'
