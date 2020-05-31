@@ -5,7 +5,7 @@ new   1: DROP USER "MMF_9_9" CASCADE
 
 User dropped.
 
-Elapsed: 00:00:05.17
+Elapsed: 00:00:01.79
 'USER MMF_9_9 DROPPED SUCCESFULLY'
 'EXECUTING drop_tablespace.sql'
 old   1: DROP TABLESPACE "&&TBS_DATA_NAME"
@@ -13,15 +13,15 @@ new   1: DROP TABLESPACE "MMF_9_9_DATA"
 
 Tablespace dropped.
 
-Elapsed: 00:00:05.34
+Elapsed: 00:00:05.27
 old   1: DROP TABLESPACE "&&TBS_IDX_NAME"
 new   1: DROP TABLESPACE "MMF_9_9_IDX"
 
 Tablespace dropped.
 
-Elapsed: 00:00:03.06
+Elapsed: 00:00:05.50
 
 Commit complete.
 
-Elapsed: 00:00:00.00
+Elapsed: 00:00:00.01
 'TABLESPACE MMF_9_9_DATA DROPPED SUCCESFULLY'

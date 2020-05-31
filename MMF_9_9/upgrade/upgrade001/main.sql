@@ -12,7 +12,6 @@ connect &&USER_NAME/oracle
 PROMPT Creating tables
 
 @create_table_coaches.sql
-@create_table_coaching.sql
 @create_table_leagues.sql
 @create_table_matches.sql
 @create_table_player_statistics.sql
